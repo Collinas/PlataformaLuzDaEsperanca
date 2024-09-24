@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4665168430630643753}
   - component: {fileID: 3323442423849623252}
   - component: {fileID: 1383604672210835912}
+  - component: {fileID: 4126801112169508596}
   m_Layer: 0
   m_Name: Jimmy
   m_TagString: Player
@@ -180,3 +181,20 @@ MonoBehaviour:
     m_Bits: 64
   isGrounded: 0
   isSprinting: 0
+--- !u!114 &4126801112169508596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701145399406918430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0891fa1d15694da489f73a50ac00cbf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallCheckDistance: 0
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  isClimb: 0
