@@ -8,12 +8,14 @@ public class PlayerChange : MonoBehaviour
     private List<Transform> cameraChildren;
     private Vector3 sharedPosition;
     private Quaternion sharedRotation;
+    private Dash dash;
 
     void Start()
     {
         InitializeChildren();
         SetInitialTransform();
         UpdateActiveChild();
+        dash = GetComponent<Dash>();
     }
 
     void Update()
@@ -23,6 +25,7 @@ public class PlayerChange : MonoBehaviour
             SaveCurrentTransform();
             CycleToNextChild();
             UpdateActiveChild();
+            dash.canDash = true;
         }
         UpdateCameraChildren();
     }

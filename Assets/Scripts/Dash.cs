@@ -13,7 +13,7 @@ public class Dash : MonoBehaviour
 
     private BaseMovement baseMovement;
     private Rigidbody2D rb;
-    [SerializeField] private bool canDash = true;
+    [SerializeField] public bool canDash = true;
     private bool isDashing = false;
 
     private void Start()
