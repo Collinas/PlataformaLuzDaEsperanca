@@ -8,12 +8,15 @@ public class BaseMovement : MonoBehaviour
     [SerializeField] private float walkSpeed = 5f;
     [SerializeField] private float sprintSpeed = 8f;
     [SerializeField] public float jumpForce = 10f;
+
+    [Header("Raycast Settings")]
     [SerializeField] private float groundCheckDistance = 0.1f;
     [SerializeField] private LayerMask groundLayer;
 
     [Header("Status Flags")]
     [SerializeField] public bool isGrounded;
     [SerializeField] private bool isSprinting;
+    public bool IsMoving { get; private set; }
 
     private Rigidbody2D rb;
 
@@ -33,19 +36,19 @@ public class BaseMovement : MonoBehaviour
     {
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, groundLayer);
 
-        // Update sprint status only when grounded
         if (isGrounded)
         {
             isSprinting = Input.GetKey(KeyCode.LeftShift);
         }
     }
 
-    private void HandleMovement()
+    public void HandleMovement()
     {
         float moveInput = Input.GetAxis("Horizontal");
         float currentSpeed = isSprinting ? sprintSpeed : walkSpeed;
 
         rb.velocity = new Vector2(moveInput * currentSpeed, rb.velocity.y);
+        IsMoving = moveInput != 0;
     }
 
     public void HandleJump()

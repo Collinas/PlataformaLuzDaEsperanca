@@ -14,8 +14,8 @@ TagManager:
   - UI
   - Ground
   - Camera
-  - Wall
-  - 
+  - ClimbWall
+  - Traps
   - 
   - 
   - 
