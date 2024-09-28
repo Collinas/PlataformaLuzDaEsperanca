@@ -152,7 +152,6 @@ ScriptedImporter:
     cells:
     - name: Sprite-0001
       frameIndex: 0
-      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 4
